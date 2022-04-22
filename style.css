@@ -10,10 +10,12 @@ Author:      Gruppe 3
 .wp-block-button__link.is-style-outline:not(.has-background) {
   background-color: transparent;
 } */
+
+/* --------------- DETTE ER KNAPPEN ------------ */
 .post-excerpt .wp-block-button__link:not(.has-background),
 .post-excerpt .wp-block-button__link:not(.has-background):active,
 .post-excerpt .wp-block-button__link:not(.has-background):focus,
 .post-excerpt .wp-block-button__link:not(.has-background):hover {
   background-color: white;
-  border: solid 5px #4aa047;
+  border: solid 3px #4aa047;
 }
