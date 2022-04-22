@@ -5,3 +5,8 @@ Version:      1.0.0
 Description:  Promos Child Theme
 Author:      Gruppe 3
 */
+
+.is-style-outline > .wp-block-button__link:not(.has-background),
+.wp-block-button__link.is-style-outline:not(.has-background) {
+  background-color: transparent;
+}
