@@ -9,9 +9,9 @@
  ?>
 <template>
     <article>
-        <img src="" alt="">
         <div>
-            <h2></h2>
+            <h2 class="navn"></h2>
+            <img src="" alt="">
             <p class="undertitel"></p>
             <p class="korttekst"></p>
         </div>
@@ -42,7 +42,7 @@
         projekter.forEach(projekt => {
             let klon = temp.cloneNode(true).content;
             klon.querySelector("h2").textContent = projekt.title.rendered;
-            klon.querySelector("img").src = billede.guid;
+            klon.querySelector("img").src = projekt.billede.guid;
             klon.querySelector(".undertitel").textContent = projekt.undertitel;
             klon.querySelector(".korttekst").textContent = projekt.korttekst;
             klon.querySelector("article").addEventListener("click", ()=> {location.href = "restdb-single.html?id="+projekt._id;
