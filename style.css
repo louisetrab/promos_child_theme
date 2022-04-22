@@ -15,4 +15,5 @@ Author:      Gruppe 3
 .post-excerpt .wp-block-button__link:not(.has-background):focus,
 .post-excerpt .wp-block-button__link:not(.has-background):hover {
   background-color: white;
+  border: solid 5px #4aa047;
 }
