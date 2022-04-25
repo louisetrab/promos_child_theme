@@ -56,3 +56,55 @@
 
     <?php
     get_footer();
+
+    // ------- NANNA -----
+
+    get_header();
+?>
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+
+        <article id="singleview">
+      <img id="pic" src="" alt="">
+      <h2></h2>
+      <p class="info"></p>
+      <p class="info_3"></p>
+      <p class="pris"></p>
+    </article>
+</main>
+    <script>
+      
+      let ret;
+
+      const url = "https://nannatorp.dk/kea/09_cms/babushka_wp/wordpress/wp-json/wp/v2/ret/"+<?php echo get_the_ID() ?>;
+    
+
+      async function hentData() {
+        console.log("hentData");
+
+        const data = await fetch(url);
+        ret = await data.json();
+        visRetter();
+      }
+      function visRetter() {
+          console.log(ret.billede.guid);
+          
+          document.querySelector("#pic").src = ret.billede.guid;
+        document.querySelector("h2").textContent = ret.title.rendered;
+        document.querySelector(".info").textContent = ret.beskrivelse;
+        document.querySelector(".info_3").textContent =
+          "Oprindelsesregion: " + ret.oprindelsesregion; 
+        document.querySelector(".pris").textContent =
+          "Pris: " + ret.pris + ",-";
+      }
+      hentData();
+
+      document.querySelector("button").addEventListener("click", () => {
+        history.back();
+      });
+    </script>
+	</div><!-- #primary -->
+
+<?php
+get_footer();
