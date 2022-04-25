@@ -7,28 +7,23 @@
 
  get_header ();
  ?>
-<template>
+
+ <section id="primary" class="content-area">
+     <main id="main" class="site-main">
+
     <article>
-                    
-        <div>
+
             <img src="" alt="">
             <h2 class="navn"></h2>
             <p class="undertitel"></p>
             <p class="korttekst"></p>
-        </div>
+
     </article>
-</template>
 
- <section id="primary" class="content-area">
-<main id="main" class="site-main">
-
-<section class="projektcontainer">
-</section>
-</main><!-- #main -->
-
+<main>
 <script>
     let projekter;
-    const dbUrl = "http://louisetraberg.dk/kea/09_cms/unesco_wp/wp-json/wp/v2/projekt?per_page=100";
+    const dbUrl = "http://louisetraberg.dk/kea/09_cms/unesco_wp/wp-json/wp/v2/projekt/"+<?php echo get_the_ID() ?>;
 
     async function getJson() {
         const data = await fetch(dbUrl);
@@ -46,7 +41,7 @@
             klon.querySelector("img").src = projekt.billede.guid;
             klon.querySelector(".undertitel").textContent = projekt.undertitel;
             klon.querySelector(".korttekst").textContent = projekt.korttekst;
-            klon.querySelector("article").addEventListener("click", ()=> {location.href = projekt.links;
+            klon.querySelector("article").addEventListener("click", ()=> {location.href = "restdb-single.html?id="+projekt._id;
             })
             container.appendChild(klon);
         })
@@ -55,6 +50,8 @@
     getJson();
 
     </script>
+
+    </main><!-- #main -->
     </section><!-- #primary -->
 
     <?php
