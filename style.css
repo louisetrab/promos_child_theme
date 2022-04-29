@@ -1,7 +1,7 @@
 /* 
 Theme Name:    Promos Child Theme
 Template:    promos
-Version:      1.0.0
+Version:      1.0.1
 Description:  Promos Child Theme
 Author:      Gruppe 3
 */
@@ -20,6 +20,36 @@ Author:      Gruppe 3
   border: solid 3px #4aa047;
 }
 
-.post-title {
-  color: #4aa047;
+/* .projektcontainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 50px;
+  margin: 20px;
 }
+
+.projektcontainer img {
+  width: 100%;
+}
+
+.post-title {
+  display: none;
+}
+
+.post-excerpt .wp-block-quote.is-large p,
+.post-excerpt .wp-block-quote.is-style-large p {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-left: 20px;
+}
+
+.post-excerpt .wp-block-quote.is-large,
+.post-excerpt .wp-block-quote.is-style-large {
+  margin: 0px 200px;
+}
+
+.post-excerpt .wp-block-quote.is-large cite,
+.post-excerpt .wp-block-quote.is-large footer,
+.post-excerpt .wp-block-quote.is-style-large cite,
+.post-excerpt .wp-block-quote.is-style-large footer {
+  text-align: right;
+} */
