@@ -15,7 +15,7 @@
             <img src="" alt="">
             <p class="verdensml"></p>
             <p class="korttekst"></p>
-            <button class="mere"><span>Læse mere</span></button>
+            <button class="mere">Læs mere -></button>
         </div>
     </article>
 </template>
@@ -48,9 +48,9 @@
 			<?php get_sidebar(); ?>
 		</div>
 	</div>
-    <nav id="ktFiltrering"></nav>
-<!-- <nav id="vmFiltrering"><button class="filter " data-projekt="alle">Alle</button></nav> -->
-<nav id="vmFiltrering" class="hide"></nav>
+    <p class="klasseoverskrift">Vælg skoletrin</p>
+<nav id="ktFiltrering" class="kteffekter"></nav>
+<nav id="vmFiltrering" class="hide grid"></nav>
 <section class="projektcontainer">
 </section>
 </main><!-- #main -->
@@ -84,7 +84,7 @@
 
     function opretKtKnapper() {
   klassetrin.forEach(trin =>{
-    document.querySelector("#ktFiltrering").innerHTML += `<button class="filter" data-kt="${trin.id}">${trin.name}</button>`
+    document.querySelector("#ktFiltrering").innerHTML += `<button class="vmfilter ktfilter" data-kt="${trin.id}">${trin.name}</button>`
   })
   addEventListenersToKtButton();
 }
@@ -182,69 +182,3 @@ getJson();
 
     <?php
     get_footer();
-
-    //NANNA
-
-
-
-
-
-// <script>
-//   let projekter;
-//   let categories;
-//   let filterVmProjekt = "alle";
-
-// 	const url = "http://louisetraberg.dk/kea/09_cms/unesco_wp/wp-json/wp/v2/projekt?per_page=100";
-// 	const caturl = "http://louisetraberg.dk/kea/09_cms/unesco_wp/wp-json/wp/v2/categories";
-
-//   async function hentData() {
-//   const data = await fetch(url);
-//   const catdata = await fetch(caturl);
-//   projekter = await data.json();
-//   categories = await catdata.json();
-//   console.log(categories);
-//   visProjekter();
-//   opretVmKnapper();
-// }
-
-// function opretVmKnapper() {
-//   categories.forEach(cat =>{
-//     document.querySelector("#vmFiltrering").innerHTML += `<button class="filter" data-projekt="${cat.id}">${cat.name}</button>`
-//   })
-//   addEventListenersToButton();
-// }
-// function addEventListenersToButton() {
-//   document.querySelectorAll("#vmFiltrering button").forEach(elm =>{
-//     elm.addEventListener("click", vmFiltrering);
-//   })
-  
-// };
-
-// function vmFiltrering() {
-//   filterVmProjekt = this.dataset.projekt;
-//   console.log(filterVmProjekt);
-
-//   visProjekter();
-// }
-
-// function visProjekter() {
-//   console.log(visProjekter);
-//   let temp = document.querySelector("template");
-//   let container = document.querySelector(".projektcontainer");
-//   container.innerHTML = "";
-
-//   projekter.forEach(projekt => {
-//     if ( filterVmProjekt == "alle" || projekt.categories.includes(parseInt(filterVmProjekt))){
-//       let klon = temp.cloneNode(true).content;
-//     klon.querySelector("h2").textContent = projekt.title.rendered;
-//             klon.querySelector("img").src = projekt.billede.guid;
-//             klon.querySelector(".undertitel").textContent = projekt.undertitel;
-//             klon.querySelector(".korttekst").textContent = projekt.korttekst;
-//             klon.querySelector("article").addEventListener("click", ()=> {location.href = projekt.links;
-//             })
-//             container.appendChild(klon);
-//         });
-
-// hentData();
-
-// </script>
