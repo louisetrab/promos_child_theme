@@ -95,9 +95,6 @@ function addEventListenersToKtButton() {
   
 };
 
-
-
-
     function opretVmKnapper() {
   categories.forEach(cat =>{
     document.querySelector("#vmFiltrering").innerHTML += `<button class="filter" data-vm="${cat.id}"><img src="${cat.billede.guid}"></button>`
@@ -118,9 +115,6 @@ function ktFiltrering(){
   visKtProjekter();
 
 }
-
-
-
 
 function visKtProjekter() {
   console.log(visKtProjekter);
